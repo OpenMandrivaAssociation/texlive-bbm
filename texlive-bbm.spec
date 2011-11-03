@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/cm/bbm
+# catalog-date 2009-11-19 15:03:53 +0100
+# catalog-license other-free
+# catalog-version undef
 Name:		texlive-bbm
 Version:	20091119
 Release:	1
@@ -135,6 +141,7 @@ fonts appears in the blackboard bold sampler.
 %doc %{_texmfdistdir}/doc/fonts/bbm/gfbatch.batch
 %doc %{_texmfdistdir}/doc/fonts/bbm/mfbatch.batch
 %doc %{_texmfdistdir}/doc/fonts/bbm/test.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -145,3 +152,5 @@ fonts appears in the blackboard bold sampler.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
