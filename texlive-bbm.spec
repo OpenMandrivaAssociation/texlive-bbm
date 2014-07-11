@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-bbm
 Version:	20091119
-Release:	7
+Release:	8
 Summary:	"Blackboard-style" cm fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/cm/bbm
