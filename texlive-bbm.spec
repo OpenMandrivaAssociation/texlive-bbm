@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/cm/bbm
-# catalog-date 2009-11-19 15:03:53 +0100
-# catalog-license other-free
-# catalog-version undef
 Name:		texlive-bbm
-Version:	20190228
+Version:	15878
 Release:	1
 Summary:	"Blackboard-style" cm fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/cm/bbm
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bbm.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bbm.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bbm.r15878.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bbm.doc.r15878.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ more sizes than you could reasonably imagine. A sample of these
 fonts appears in the blackboard bold sampler.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -135,25 +129,10 @@ fonts appears in the blackboard bold sampler.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 20091119-2
-+ Revision: 749506
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20091119-1
-+ Revision: 717889
-- texlive-bbm
-- texlive-bbm
-- texlive-bbm
-- texlive-bbm
-- texlive-bbm
-
